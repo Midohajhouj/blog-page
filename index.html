@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Blog Page</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f9f9fb;
+            color: #444;
+        }
+
+        header {
+            background: linear-gradient(90deg, #007BFF, #0056b3);
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #0056b3;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .blog {
+            background: #fff;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog h2 {
+            margin-top: 0;
+            color: #007BFF;
+            font-size: 1.8rem;
+        }
+
+        .blog p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .like-button {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            margin-top: 1rem;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .like-button:hover {
+            background: #0056b3;
+        }
+
+        .like-count {
+            margin-left: 0.5rem;
+            font-weight: bold;
+            color: #444;
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: #fff;
+            padding: 1.5rem 0;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .blog h2 {
+                font-size: 1.5rem;
+            }
+
+            .blog p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <script>
+        function likePost(postId) {
+            const post = document.getElementById(`post-${postId}`);
+            const likeCount = post.querySelector('.like-count');
+            let currentLikes = parseInt(likeCount.textContent);
+            likeCount.textContent = ++currentLikes;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Blog</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="blog" id="post-1">
+            <h2>Blog Title 1</h2>
+            <p>Published on January 1, 2025</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+            <button class="like-button" onclick="likePost(1)">Like</button><span class="like-count"> 0</span> Likes
+        </div>
+
+        <div class="blog" id="post-2">
+            <h2>Blog Title 2</h2>
+            <p>Published on January 5, 2025</p>
+            <p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet.</p>
+            <button class="like-button" onclick="likePost(2)">Like</button><span class="like-count"> 0</span> Likes
+        </div>
+
+        <div class="blog" id="post-3">
+            <h2>Blog Title 3</h2>
+            <p>Published on January 10, 2025</p>
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+            <button class="like-button" onclick="likePost(3)">Like</button><span class="like-count"> 0</span> Likes
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Professional Blog. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
